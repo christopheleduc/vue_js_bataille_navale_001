@@ -4,7 +4,7 @@
     <input v-model="title">
     <h2>Pacific Sea</h2>
      <ul id="coordonees-cibles">
-       <li v-for = "cible in coordonees">
+       <li v-for = "cible in coordonees" v-bind:key="cible.id">
             <span v-if="cible.position == 'SSN'" style="color:red;" v-show="cible.display == true">
                 {{ cible.position }}
             </span>
@@ -22,10 +22,10 @@ module.exports = {
        return {
           titre: 'Operational theatre',
           coordonees: [
-            { position: 'empty', display:false },
-            { position: 'empty', display:false },
-            { position: 'SSN', display:true },
-            { position: 'Cuirassé', display:true }
+            { id: 1, position: 'empty', display:false },
+            { id: 2, position: 'empty', display:false },
+            { id: 3, position: 'SSN', display:true },
+            { id: 4, position: 'Cuirassé', display:true }
           ]
         }
   }
