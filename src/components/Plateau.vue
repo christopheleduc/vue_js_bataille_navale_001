@@ -3,16 +3,16 @@
     <h1>{{ titre }} </h1>
     <input v-model="title">
     <h2>Pacific Sea</h2>
-     <ul id="coordonees-cibles">
-       <li v-for = "cible in coordonees" v-bind:key="cible.id">
-            <span v-if="cible.position == 'SSN'" style="color:red;" v-show="cible.display == true">
+     <table id="coordonees-cibles" style="border : 1px solid #000000;" >
+       <tr v-for = "cible in coordonees" v-bind:key="cible.id" style="border : 1px solid #000000;">
+            <td v-if="cible.position == 'SSN'" style="color:red;" v-show="cible.display == true" >
                 {{ cible.position }}
-            </span>
-            <span v-else v-show="cible.display == true">
+            </td>
+            <td v-else v-show="cible.display == true">
                 {{ cible.position }}
-            </span>
-       </li>
-     </ul>
+            </td>
+       </tr>
+     </table>
   </div>
 </template>
 
@@ -36,6 +36,12 @@ module.exports = {
 #app {
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 60px; 
+}
+
+.coordonees-cibles, .caseBrun{
+height : 35px;
+width : 35px;
+border : 1px solid #000000;
 }
 </style>
